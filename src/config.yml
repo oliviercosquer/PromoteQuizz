@@ -1,0 +1,23 @@
+rankToPromote: Member
+quizzMessage:
+  StartMsg: C'est parti pour le quizz!
+  StopMsg: Le quizz est maintenant stoppe.
+  BadAnswerMsg: Mauvaise reponse!
+  GoodAnswerMsg: Bonne reponse! Question suivante.
+  AlReadyInQuizzMsg: Vous etes deja dans un quizz!
+  NotInAQuizzMsg: Vous n'etes pas dans un quizz!
+questions:
+  q1:
+    question: Combien font 1+1?
+    rightAnswer: 1
+    answers:
+      a1: 2
+      a2: 3
+      a3: 1
+  q2:
+    question: Combien font 1+2?
+    rightAnswer: 2
+    answers:
+      a1: 2
+      a2: 3
+      a3: 1
