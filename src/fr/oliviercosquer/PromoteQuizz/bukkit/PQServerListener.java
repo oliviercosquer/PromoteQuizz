@@ -21,6 +21,7 @@ package fr.oliviercosquer.PromoteQuizz.bukkit;
 
 import fr.oliviercosquer.PromoteQuizz.PQChannelManager;
 import fr.oliviercosquer.PromoteQuizz.PQPlayer;
+import java.util.Iterator;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -54,11 +55,10 @@ public class PQServerListener implements Listener {
             event.setCancelled(true);
             this.channelManager.answerCommand(answer, player);
         } else {
-
-            //Remove all player in quizz from recipients
-            for (Player tmpPlayer : event.getRecipients()) {
+            for (Iterator<Player> it = event.getRecipients().iterator(); it.hasNext();) {
+                Player tmpPlayer = it.next();
                 if (this.channelManager.playerExist(tmpPlayer) && player != tmpPlayer) {
-                    event.getRecipients().remove(tmpPlayer);
+                    it.remove();
                 }
             }
         }
