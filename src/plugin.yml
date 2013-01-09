@@ -1,11 +1,12 @@
 name: PromoteQuizz
-version: 0.2.5
+version: 1.0
 description: a quizz plugin to promote players after correctly answered to all your questions
 load: STARTUP
 author: Olivier Cosquer
-main: fr.oliviercosquer.PromoteQuizz.PromoteQuizz
+depend: [Vault]
+main: fr.oliviercosquer.PromoteQuizz.bukkit.PromoteQuizz
 commands:
   qcm:
     description: Toutes les commandes de qcm
-    permissions: promoteQuizz.start
+    permissions: promoteQuizz.qcm
     usage: /<command> <commandaction>
