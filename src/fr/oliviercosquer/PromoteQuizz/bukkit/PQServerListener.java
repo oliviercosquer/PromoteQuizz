@@ -50,15 +50,15 @@ public class PQServerListener implements Listener {
         //Checking if sender is in quizz
         if (this.channelManager.playerExist(event.getPlayer())) {  
             
-            answer = alphabet.indexOf(event.getMessage().toLowerCase().toCharArray()[0]);
-            
+            answer = alphabet.indexOf(event.getMessage().toLowerCase().toCharArray()[0]);            
             event.setCancelled(true);
             this.channelManager.answerCommand(answer, player);
+            
         } else {
             for (Iterator<Player> it = event.getRecipients().iterator(); it.hasNext();) {
-                Player tmpPlayer = it.next();
+                Player tmpPlayer = it.next();                
                 if (this.channelManager.playerExist(tmpPlayer) && player != tmpPlayer) {
-                    it.remove();
+                    it.remove();            
                 }
             }
         }

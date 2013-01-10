@@ -20,6 +20,7 @@ Copyright 2013 - Olivier Cosquer - http://www.olivier-cosquer.com
 package fr.oliviercosquer.PromoteQuizz;
 
 import java.util.ArrayList;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 
@@ -30,7 +31,9 @@ import org.bukkit.configuration.file.FileConfiguration;
 public class PQQuestionManager {
     
     private ArrayList<PQQuestion> questionsList;
-    private FileConfiguration config;
+    private FileConfiguration config;    
+    private ChatColor questionColor;
+    private ChatColor answerColor;
 
     /**
      * 
@@ -39,6 +42,11 @@ public class PQQuestionManager {
     public PQQuestionManager(FileConfiguration config) {
         this.config = config;
         this.questionsList = new ArrayList<PQQuestion>();
+        
+        //Chat Coloring
+        this.questionColor = ChatColor.getByChar(this.config.getString("QuestionColor"));
+        this.answerColor = ChatColor.getByChar(this.config.getString("AnswerColor"));
+        
         this.initQuestion();
     }
     
@@ -82,7 +90,7 @@ public class PQQuestionManager {
             }
                         
             //Create new question object
-            this.questionsList.add(new PQQuestion(question,rightAnswer,answerList));
+            this.questionsList.add(new PQQuestion(question,rightAnswer,answerList,this.questionColor,this.answerColor));
         }
     }
 }

@@ -1,24 +1,26 @@
+QuestionColor: 1
+AnswerColor: 3
 quizzMessage:
-  StartMsg: C'est parti pour le quizz!
-  StopMsg: Le quizz est maintenant stoppe.
-  BadAnswerMsg: Mauvaise reponse!
-  GoodAnswerMsg: Bonne reponse! Question suivante.
-  AlReadyInQuizzMsg: Vous etes deja dans un quizz!
-  NotInAQuizzMsg: Vous n'etes pas dans un quizz!
+  StartMsg: "&eC'est parti pour le quizz!"
+  StopMsg: "&eLe quizz est maintenant stoppe."
+  BadAnswerMsg: "&4Mauvaise reponse!"
+  GoodAnswerMsg: "&2Bonne reponse! Question suivante."
+  AlReadyInQuizzMsg: "&4Vous etes deja dans un quizz!"
+  NotInAQuizzMsg: "&4Vous n'etes pas dans un quizz!"
 questions:
   q1:
-    question: Combien font 1+1?
+    question: "Combien font 1+1?"
     rightAnswer: 1
     answers:
-      - 2
-      - 3
-      - 1
+    - 2
+    - 3
+    - 1
   q2:
-    question: Le grief est-il autorisé?
+    question: "Le grief est-il autorise?"
     rightAnswer: 2
     answers:
-      - Oui, sans modération
-      - Non
-      - Non, mais des fois oui
+    - Oui, sans moderation
+    - Non
+    - Non, mais des fois oui
 Commands:
-  - say {player} a bien repondu au quizz!
+ - "say {player} a bien repondu au quizz!"

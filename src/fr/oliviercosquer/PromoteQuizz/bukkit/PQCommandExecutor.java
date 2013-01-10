@@ -77,7 +77,6 @@ public class PQCommandExecutor implements CommandExecutor {
                         this.stopCommand(player);
                         return true;
                     }
-                    return false;
                 }else{
                     sender.sendMessage(ChatColor.RED+"permissions insuffisantes!");
                     return true;

@@ -1,5 +1,5 @@
 name: PromoteQuizz
-version: 1.0
+version: 1.1.0
 description: a quizz plugin to promote players after correctly answered to all your questions
 load: STARTUP
 author: Olivier Cosquer

@@ -20,6 +20,7 @@ Copyright 2013 - Olivier Cosquer - http://www.olivier-cosquer.com
 package fr.oliviercosquer.PromoteQuizz;
 
 import java.util.ArrayList;
+import org.bukkit.ChatColor;
 
 /**
  *
@@ -37,8 +38,8 @@ public class PQQuestion {
      * @param rightAnswer
      * @param answerList 
      */
-    public PQQuestion(String question, int rightAnswer, ArrayList<String> answerList) {
-        this.question = question;
+    public PQQuestion(String question, int rightAnswer, ArrayList<String> answerList,ChatColor questionColor,ChatColor answerColor) {
+        this.question = questionColor+question+answerColor;
         this.rightAnswer = rightAnswer;
         
         //Create the question

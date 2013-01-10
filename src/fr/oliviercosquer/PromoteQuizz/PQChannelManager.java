@@ -20,6 +20,7 @@ package fr.oliviercosquer.PromoteQuizz;
 
 import fr.oliviercosquer.PromoteQuizz.bukkit.PromoteQuizz;
 import java.util.HashMap;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
@@ -32,7 +33,7 @@ public class PQChannelManager {
     private HashMap<String,PQPlayer> playerList;    
     private PQQuestionManager questionManager;
     private PQCommandManager commandManager;
-    private FileConfiguration config;
+    private FileConfiguration config;    
     
     //Quizz messages string
     private String startMsg;
@@ -50,15 +51,15 @@ public class PQChannelManager {
         this.playerList = new HashMap<String,PQPlayer>();
         this.config = plugin.getConfig();
         this.questionManager = plugin.getQuestionManager();
-        this.commandManager = plugin.getCommandManager();
+        this.commandManager = plugin.getCommandManager();      
         
         //Quizz messages loading
-        this.startMsg = this.config.getString("quizzMessage.StartMsg");
-        this.stopMsg = this.config.getString("quizzMessage.StopMsg");
-        this.badAnswerMsg = this.config.getString("quizzMessage.BadAnswerMsg");
-        this.goodAnswerMsg = this.config.getString("quizzMessage.GoodAnswerMsg");
-        this.alReadyInQuizzMsg = this.config.getString("quizzMessage.AlReadyInQuizzMsg");
-        this.notInQuizzMsg = this.config.getString("quizzMessage.NotInAQuizzMsg");
+        this.startMsg = ChatColor.translateAlternateColorCodes('&', this.config.getString("quizzMessage.StartMsg"));
+        this.stopMsg = ChatColor.translateAlternateColorCodes('&', this.config.getString("quizzMessage.StopMsg"));
+        this.badAnswerMsg = ChatColor.translateAlternateColorCodes('&', this.config.getString("quizzMessage.BadAnswerMsg"));
+        this.goodAnswerMsg = ChatColor.translateAlternateColorCodes('&', this.config.getString("quizzMessage.GoodAnswerMsg"));
+        this.alReadyInQuizzMsg = ChatColor.translateAlternateColorCodes('&', this.config.getString("quizzMessage.AlReadyInQuizzMsg"));
+        this.notInQuizzMsg = ChatColor.translateAlternateColorCodes('&', this.config.getString("quizzMessage.NotInAQuizzMsg"));
     }
     
     /**
@@ -112,7 +113,7 @@ public class PQChannelManager {
      */
     public void executeCommand(Player player){
         String playerName = player.getName();
-        String tmpCmd = "";
+        String tmpCmd;
         
         for(String cmd : this.commandManager.getCommandLst()){
             tmpCmd = cmd.replace("{player}", playerName);
@@ -200,6 +201,6 @@ public class PQChannelManager {
      */
     public void notInQuizzMsg(PQPlayer player){
         player.getPlayer().sendMessage(this.notInQuizzMsg);
-    }
+    }   
     
 }
